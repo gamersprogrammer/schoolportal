@@ -1,75 +1,83 @@
-# React + TypeScript + Vite
+# School Portal Frontend Interface 🎓
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, component-driven frontend interface for a student academic portal, developed as a practical implementation of modern web development methodologies. This project was built to fulfill the practical requirements of the Student Industrial Work Experience Scheme (SIWES) at Maocular Tech Expert.
 
-Currently, two official plugins are available:
+## 📝 Project Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The School Portal Frontend Interface is a clean, static web application designed to provide students with a streamlined view of their academic activities. The interface focuses purely on frontend design (no backend logic) to demonstrate modern UI/UX principles, responsive layout structuring, and reusable component architecture. 
 
-## React Compiler
+Users can navigate through a welcome landing page, a functional-looking login screen, and a comprehensive dashboard that displays enrolled courses, upcoming schedules, attendance metrics, and recent announcements.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+*   **Landing Page**: A clean, welcoming entry point with clear call-to-action navigation.
+*   **Student Login Page**: A structured authentication interface utilizing React state for form handling.
+*   **Interactive Dashboard**: A central hub displaying summary cards for courses, assignments, exams, and attendance.
+*   **Course Section**: Dynamic grids displaying reusable course cards with mock progress bars and instructor details.
+*   **Announcements & Scheduling**: Side-panel widgets displaying upcoming events and school updates.
+*   **Responsive Layout**: Fully optimized for mobile, tablet, and desktop screens using Tailwind utility classes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Technology Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*   **Framework**: React (using Vite for fast build tooling).
+*   **Language**: TypeScript for type-safe components, structured props, and reduced runtime errors.
+*   **Styling**: Tailwind CSS (v4) for rapid, utility-first styling and fluid responsiveness.
+*   **Icons**: Lucide React for consistent, lightweight SVG iconography.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📂 Component Architecture
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The project follows a modular, component-based folder structure to ensure maintainability and separation of concerns:
 
+```text
+src/
+├── data/
+│   └── mockData.tsx          # Centralized static data (courses, schedules, links)
+├── components/
+│   ├── Navbar.tsx            # Top navigation with mobile menu toggle and search
+│   ├── Sidebar.tsx           # Collapsible side navigation menu
+│   └── SummaryCard.tsx       # Reusable dashboard metric card
+├── pages/
+│   ├── LandingPage.tsx       # Initial welcome view
+│   ├── LoginPage.tsx         # User authentication view
+│   └── DashboardPage.tsx     # Main application dashboard
+├── App.tsx                   # Main layout wrapper and state-based router
+├── index.css                 # Global CSS and Tailwind imports
+└── main.tsx                  # Application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
+*   Node.js (v18 or higher recommended)
+*   npm, yarn, or pnpm
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
 
-```
+1. **Clone the repository** (or extract the project folder).
+   ```bash
+   git clone <repository-url>
+   cd school-portal-frontend
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **View the application**
+   Open your browser and navigate to the local host address provided in the terminal (usually `http://localhost:5173`).
+
+## 👨‍💻 Author
+
+**Ezeonyeasi Valentine**
+*   **Institution**: Federal University of Technology, Owerri (FUTO)
+*   **Department**: Information Technology
+*   **Organization of Attachment**: Maocular Tech Expert (Suite A1, Asher Plaza, Arab Road, Kubwa, Abuja)
+
+## 🙏 Acknowledgments
+This project was developed under the supervision and mentorship of the management and staff at **Maocular Tech Expert** during the SIWES program. Special thanks to the FUTO SIWES coordination team and the Department of Information Technology for integrating practical industrial experience into the academic curriculum.
